@@ -1,23 +1,43 @@
 # Tiny Tapeout project information
 project:
-  title:        "Tiny Tapeout Factory Test"      # Project title
-  author:       "Tiny Tapeout"             # Your name
-  discord:      ""                         # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Factory test module"      # One line description of what your project does
+  title:        "UW ASIC - Optimized Dino"      # Project title
+  author:       "University of Waterloo ASIC Design Team"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Dino game, but only 2 tiles!"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     25175000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
-  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  tiles: "1x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_factory_test"
+  top_module:  "tt_um_uwasic_dinogame"
 
   # List your project's source files here.
   # Source files must be in ./src and you must list each source file separately, one per line.
   # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
-    - "tt_um_factory_test.v"
+    - "debounce.v"
+    - "dino_game_top.v"
+    - "dino_render.v"
+    - "dino_rom.v"
+    - "graphics_top.v"
+    - "hvsync_generator.v"
+    - "lfsr.v"
+    - "obs_render.v"
+    - "obs_rom.v"
+    - "obstacles.v"
+    - "player_controller.v"
+    - "player_physics.v"
+    - "score.v"
+    - "score_render.v"
+    - "audio_interface.v"
+    - "jump_sound_player.v"
+    - "game_over_sound_player.v"
+    - "bg_object.v"
+    - "bg_object_rom.v"
+    - "bg_render.v"
+    - "bg_line.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
